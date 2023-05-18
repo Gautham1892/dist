@@ -9,6 +9,7 @@ import Payment from "./Payment";
 import Seminars from "./Seminars";
 import Final from "./Final";
 import Header from "./Header";
+import Journal from "./Journal";
 
 function Mainpage() {
 
@@ -17,8 +18,9 @@ function Mainpage() {
   const steps = [
     "Account Information",
     "Personal Details",
-    "Payment",
+    "Conferences",
     "Seminars",
+    "Journals",
     "Complete",
   ];
 
@@ -33,7 +35,9 @@ function Mainpage() {
       case 4:
         return <Seminars />;  
       case 5:
-        return <Final />;
+        return <Journal />;
+      case 6:
+        return <Final />;  
       default:
     }
   };

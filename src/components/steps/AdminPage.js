@@ -1,45 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 import "./LoginPage.css";
 
-function LoginPage() {
+function AdminPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleForgotPasswordClick = () => {
-    navigate("/admin");
-  };
+	const handleForgotPasswordClick=()=>{
+		navigate("/");
+	}
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      // Send a POST request to the authentication server
-      const response = await axios.post("/api/login", {
-        username,
-        password,
-      });
-
-      if (response.data.success) {
-        // Authentication successful
-        setLoggedIn(true);
-        navigate("/main");
-      } else {
-        // Authentication failed
-        console.log(response.data.message);
-      }
-    } catch (error) {
-      console.log("Error:", error.message);
+    // Check if the username and password are valid
+    // Perform the login logic here
+    if (username === "admin" && password === "password") {
+      // Set the loggedIn state to true if the login is successful
+      setLoggedIn(true);
+      // Redirect to the main page
+      navigate("/query");
     }
   };
 
   // Redirect to the main page if the user is already logged in
   if (loggedIn) {
-    navigate("/main");
+    navigate("/query");
   }
 
   return (
@@ -79,7 +68,7 @@ function LoginPage() {
 		            <div class="form-group d-md-flex">
 		            	
 					<div class="w-50 text-md-right">
-									<button href="#" onClick={handleForgotPasswordClick}>Admin Login</button>
+									<button href="#" onClick={handleForgotPasswordClick}>Student Login</button>
 									</div>
 									
 		            </div>
@@ -94,4 +83,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default AdminPage;

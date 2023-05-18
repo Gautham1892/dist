@@ -40,7 +40,7 @@ function Payment() {
 
   return (
     <fieldset>
-      <h3 align="left">International Seminars (attach proof)</h3>
+      <h3 align="left">Publications during Research period (attach proof)</h3>
       {internationalSeminars.map((seminar, index) => (
         <div key={index} className="form-row">
           <div className="form-group col-md-6">
@@ -127,10 +127,10 @@ function Payment() {
         </div>
       ))}
       <button type="button" onClick={handleAddInternationalSeminars}>
-        Add International Seminars
+        Add Publications
       </button>
 
-      <h3 align="left">National Conferences (attach proof)</h3>
+      <h3 align="left">Journals published during Research period (attach proof)</h3>
       {nationalConferences.map((conference, index) => (
         <div key={index} className="form-row">
           <div className="form-group col-md-6">
@@ -257,7 +257,7 @@ function Payment() {
         </div>
       ))}
       <button type="button" onClick={handleAddNationalConferences}>
-        Add National Conferences
+        Add Journals
       </button>
     </fieldset>
   );
