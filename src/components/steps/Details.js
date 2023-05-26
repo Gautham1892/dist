@@ -126,6 +126,64 @@ export default function Details() {
 
 
 
+    <h3 align="left">DC Meeting Details (Leave if not applicable)</h3>
+    
+    <div class="form-row"> 
+      <div class="form-group col-md-6">  
+        <input type="text" class="form-control" placeholder="Number" name="dc_meeting"/> 
+      </div>  
+      <div class="form-group col-md-6"> 
+        <input type="text" class="form-control" placeholder="Status" name="dc_meeting_status"/>
+      </div> 
+      <div class="form-group col-md-6"> 
+        <input type="date" class="form-control" placeholder="Status" name="dc_meeting_date"/>
+      </div> 
+
+
+      <div class="input-group"> 
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="upload" multiple/>
+          <label class="custom-file-label" for="upload"><i class="ion-android-cloud-outline"></i>Choose file</label>
+        </div>
+      </div>
+
+      <ul class="file_added">
+        <li>File Added:</li>
+        <li><a href="#"><i class="ion-paperclip"></i>national_id_card.png</a></li>
+        <li><a href="#"><i class="ion-paperclip"></i>national_id_card_back.png</a></li>
+      </ul>
+
+    </div>
+
+
+    <h3 align="left">Coirce Work Status (Leave if not applicable)</h3>
+    
+    <div class="form-row"> 
+      <div class="form-group col-md-6">  
+        <input type="text" class="form-control" placeholder="Status" name="dc_meeting"/> 
+      </div>  
+      <div class="form-group col-md-6"> 
+        <input type="range" class="form-control" placeholder="Progress" name="dc_meeting_status"/>
+      </div> 
+      <div class="form-group col-md-6"> 
+        <input type="date" class="form-control" placeholder="Submission Date" name="dc_meeting_date"/>
+      </div> 
+
+
+      <div class="input-group"> 
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="upload" multiple/>
+          <label class="custom-file-label" for="upload"><i class="ion-android-cloud-outline"></i>Choose file</label>
+        </div>
+      </div>
+
+      <ul class="file_added">
+        <li>File Added:</li>
+        <li><a href="#"><i class="ion-paperclip"></i>national_id_card.png</a></li>
+        <li><a href="#"><i class="ion-paperclip"></i>national_id_card_back.png</a></li>
+      </ul>
+
+    </div>
 
 
 

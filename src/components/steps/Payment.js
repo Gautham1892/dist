@@ -65,10 +65,20 @@ function Payment() {
           </div>
           <div className="form-group col-md-6">
             <input
-              type="text"
+              type="date"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Start Period"
+              name="start_periods"
+              value={seminar.name}
+              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="date"
+              className="form-control"
+              placeholder="End Period"
+              name="end_periods"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -77,8 +87,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Location"
+              name="seminar_locations"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -87,18 +97,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
-              value={seminar.name}
-              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
-            />
-          </div>
-          <div className="form-group col-md-6">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Presented or Attended"
+              name="seminar_status"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -137,8 +137,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Paper Name"
+              name="conference_paper_names"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -147,8 +147,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Awarded"
-              name="awarded"
+              placeholder="Authors"
+              name="conference_authors"
               value={conference.awarded}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -157,8 +157,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="ISBN NUmber"
+              name="conference_isbn_numbers"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -167,8 +167,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Page Number"
+              name="conference_page_number"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -177,8 +177,28 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Volume Number"
+              name="conference_volume_numbers"
+              value={conference.name}
+              onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="date"
+              className="form-control"
+              placeholder="Start Period"
+              name="conference_start_periods"
+              value={conference.name}
+              onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="date"
+              className="form-control"
+              placeholder="End Period"
+              name="conference_end_periods"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -187,8 +207,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Conference Type"
+              name="conference_types"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -197,8 +217,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Place"
+              name="conference_places"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -207,28 +227,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
-              value={conference.name}
-              onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
-            />
-          </div>
-          <div className="form-group col-md-6">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Name"
-              name="name"
-              value={conference.name}
-              onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
-            />
-          </div>
-          <div className="form-group col-md-6">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Contribution"
+              name="conference_contribution"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />

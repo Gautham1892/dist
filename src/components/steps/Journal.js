@@ -47,8 +47,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Paper Name"
+              name="journal_paper_names"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -57,8 +57,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Awarded"
-              name="awarded"
+              placeholder="Authors"
+              name="journal_authors"
               value={seminar.awarded}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -67,8 +67,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Journal Name"
+              name="journal_names"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -77,8 +77,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Issn Number"
+              name="journalissn_numbers"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -87,8 +87,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Page No"
+              name="journal_page_numbers"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -97,8 +97,48 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Volume Number"
+              name="journal_volume_number"
+              value={seminar.name}
+              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="date"
+              className="form-control"
+              placeholder="Start Period"
+              name="journal_start_periods"
+              value={seminar.name}
+              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
+            />  
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="date"
+              className="form-control"
+              placeholder="End Period"
+              name="journal_end_periods"
+              value={seminar.name}
+              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Impact factor"
+              name="journal_impact_factors"
+              value={seminar.name}
+              onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
+            />
+          </div>
+          <div className="form-group col-md-6">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Publisher Name"
+              name="journal_publisher_names"
               value={seminar.name}
               onChange={(event) => handleInputChange(index, event, 'internationalSeminars')}
             />
@@ -130,15 +170,15 @@ function Payment() {
         Add Publications
       </button>
 
-      <h3 align="left">Journals published during Research period (attach proof)</h3>
+      <h3 align="left">Workshops during Research period (attach proof)</h3>
       {nationalConferences.map((conference, index) => (
         <div key={index} className="form-row">
           <div className="form-group col-md-6">
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Workshop Name"
+              name="workshop_names"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -147,8 +187,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Awarded"
-              name="awarded"
+              placeholder="Title"
+              name="workshop_titles"
               value={conference.awarded}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -157,8 +197,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Organiser"
+              name="workshop_organisers"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />
@@ -167,8 +207,8 @@ function Payment() {
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
-              name="name"
+              placeholder="Location"
+              name="workshop_locations"
               value={conference.name}
               onChange={(event) => handleInputChange(index, event, 'nationalConferences')}
             />

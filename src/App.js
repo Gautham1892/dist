@@ -5,6 +5,7 @@ import MainPage from "./components/steps/Mainpage";
 import AdminPage from "./components/steps/AdminPage";
 import Dashboard from "./components/steps/Dashboard";
 import AdminQuery from "./components/steps/AdminQuery"
+import QueryDetails from "./components/steps/QueryDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/main" element={<MainPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/query" element={<AdminQuery />} />
+          <Route path="/querydetails/:queryId" component={QueryDetails} />
         </Routes>
       </div>
     </BrowserRouter>

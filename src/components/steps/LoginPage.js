@@ -4,9 +4,11 @@ import axios from "axios";
 
 import "./LoginPage.css";
 
+axios.defaults.baseURL = "http://localhost:8000"
+
 function LoginPage() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const [emailid, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -19,15 +21,27 @@ function LoginPage() {
 
     try {
       // Send a POST request to the authentication server
-      const response = await axios.post("/api/login", {
-        username,
+      const response = await axios.post("/api/auth/scholar", {
+        emailid,
         password,
       });
-
-      if (response.data.success) {
+      if (response.status===200) {
+        const { accessToken, message, verified }= response.data
+        console.log(response.data);
+        if(accessToken){
+          localStorage.setItem("accessToken",accessToken);
+          localStorage.setItem("VerifiedStatus",verified);
+          localStorage.setItem("emailId",emailid);
+        }
         // Authentication successful
         setLoggedIn(true);
-        navigate("/main");
+        if(verified === "true"){
+          navigate("/dash");
+        }
+        else{
+          navigate("/main");
+        }
+
       } else {
         // Authentication failed
         console.log(response.data.message);
@@ -65,7 +79,7 @@ function LoginPage() {
 							<form action="#" class="signin-form">
 			      		<div class="form-group mb-3">
 			      			<label class="label" for="name">Username</label>
-			      			<input type="text" class="form-control" placeholder="Username" required value={username}
+			      			<input type="text" class="form-control" placeholder="Username" required value={emailid}
             onChange={(e) => setUsername(e.target.value)}/>
 			      		</div>
 		            <div class="form-group mb-3">

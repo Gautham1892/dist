@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate  } from 'react-router-dom';
 import Header from './Header';
 import './AdminQuery.css';
 
@@ -9,6 +10,8 @@ const AdminQuery = () => {
   const [selectedDropdown3, setSelectedDropdown3] = useState('');
   const [selectedDropdown4, setSelectedDropdown4] = useState('');
   const [queryData, setQueryData] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleDropdown1Change = (event) => {
     const selectedOption = event.target.textContent;
@@ -46,6 +49,9 @@ const AdminQuery = () => {
       .catch((error) => {
         console.error(error);
       });
+  };
+  const handleMoreClick = (queryId) => {
+    navigate.push(`/querydetails/${queryId}`);
   };
 
   return (
@@ -101,9 +107,14 @@ const AdminQuery = () => {
       {/* Display the query data */}
       {queryData && (
         <div>
-          <h3>Query Result:</h3>
-          <pre>{JSON.stringify(queryData, null, 2)}</pre>
-        </div>
+        <h3>Query Result:</h3>
+        {queryData.map((query, index) => (
+          <div key={index}>
+            <p>{query.title}</p>
+            <button onClick={() => handleMoreClick(query.id)}>More</button>
+          </div>
+        ))}
+      </div>
       )}
     </div>
   );

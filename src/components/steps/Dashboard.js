@@ -11,8 +11,15 @@ function Dashboard() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/userData'); // Replace '/api/userData' with your actual API endpoint
+      const accessToken = localStorage.getItem("accessToken");
+      axios.defaults.headers.common['Authorization']=accessToken;
+      var email_id = localStorage.getItem("emailId");
+      console.log(email_id);
+      const response = await axios.post('/api/scholar/dashboard',{
+        email_id
+      }); // Replace '/api/userData' with your actual API endpoint
       setUserData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
